@@ -1,0 +1,8 @@
+{
+  "name": "kittys-house-of-pizza",
+  "version": "1.0.0",
+  "description": "Kitty's House of Pizza — brick-oven pizza and house-made pastas at 4059 5th Ave N, St. Petersburg FL (static site + node form relay)",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

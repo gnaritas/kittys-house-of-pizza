@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /thanks
+
+Sitemap: https://kittys-house-of-pizza-demo.up.railway.app/sitemap.xml
