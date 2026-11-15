@@ -55,25 +55,26 @@ d.rectangle((0, 20, W, 26), fill=INK)
 d.rectangle((0, H - 26, W, H - 20), fill=INK)
 
 # left text column
-d.font = sans(24)
-d.text((84, 96), "N O W  O P E N I N G", font=sans(24), fill=TEAL)
-d.text((84, 140), "Kitty's", font=serif(120), fill=INK)
-d.text((88, 268), "HOUSE OF PIZZA", font=sans(46), fill=TOMATO)
-d.text((88, 348), "Brick-oven pizza · House-made pastas", font=serif(34), fill=INK)
-d.text((88, 394), "Bright Ice pints by the scoop", font=serif(34), fill=INK)
-d.line([(88, 460), (560, 460)], fill=INK, width=4)
-d.text((88, 480), "4059 5th Ave N · Central Oak Park", font=sans(26), fill=INK)
-d.text((88, 514), "St. Petersburg, Florida", font=sans(26), fill=INK)
+d.text((84, 110), "N O W  O P E N I N G", font=sans(24), fill=TEAL)
+d.text((84, 138), "Kitty's", font=serif(118), fill=INK)
+d.text((88, 268), "HOUSE OF PIZZA", font=sans(44), fill=TOMATO)
+d.text((88, 336), "Brick-oven pizza · House-made pastas", font=serif(32), fill=INK)
+d.text((88, 378), "Bright Ice pints by the scoop", font=serif(32), fill=INK)
+d.line([(88, 424), (560, 424)], fill=INK, width=4)
+d.text((88, 440), "4059 5th Ave N · Central Oak Park", font=sans(24), fill=INK)
+d.text((88, 466), "St. Petersburg, Florida", font=sans(24), fill=INK)
 
-# rotated opening badge
-badge_w, badge_h = 300, 92
+# rotated opening badge — below the text block, clear of the bottom stripe
+badge_w, badge_h = 225, 70
 badge = Image.new("RGBA", (badge_w + 20, badge_h + 20), (0, 0, 0, 0))
 bd = ImageDraw.Draw(badge)
-bd.rounded_rectangle((10, 10, 10 + badge_w, 10 + badge_h), radius=18, fill=TEAL)
-bd.text((badge_w // 2 + 10, badge_h // 2 + 10 - 20), "OPENS", font=sans(26), fill=(255, 255, 255, 200), anchor="mm")
-bd.text((badge_w // 2 + 10, badge_h // 2 + 10 + 14), "NOV. 17", font=sans(40), fill=(255, 255, 255, 255), anchor="mm")
+bd.rounded_rectangle((10, 10, 10 + badge_w, 10 + badge_h), radius=16, fill=TEAL)
+bd.text((badge_w // 2 + 10, badge_h // 2 + 10 - 16), "OPENS", font=sans(21), fill=(255, 255, 255, 200), anchor="mm")
+bd.text((badge_w // 2 + 10, badge_h // 2 + 10 + 11), "NOV. 17", font=sans(32), fill=(255, 255, 255, 255), anchor="mm")
 badge = badge.rotate(-4, expand=True, resample=Image.BICUBIC)
-img.alpha_composite(badge, (112, 540)) if img.mode == "RGBA" else img.paste(badge, (112, 540), badge.convert("RGBA"))
+bw_new, bh_new = badge.size
+bx, by = 88, 604 - bh_new - 4
+img.paste(badge, (bx, by), badge.convert("RGBA"))
 
 # right: retro price sign on posts
 sx, sy, sw, sh = 700, 110, 420, 330

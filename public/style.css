@@ -90,8 +90,8 @@ section+section{border-top:1px dashed rgba(23,38,43,.35)}
 .band{background:var(--ink);color:var(--cream);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:54px 0}
 .band h2{color:#fff}
 .band p{color:var(--paper2);max-width:58ch}
-.band .btn{box-shadow:4px 4px 0 var(--tomato);margin-top:16px}
-.band .btn:hover{box-shadow:4px 4px 0 var(--gold)}
+.band .btn{background:var(--cream);color:var(--ink);border-color:var(--cream);box-shadow:4px 4px 0 var(--tomato);margin-top:16px}
+.band .btn:hover{background:var(--gold);border-color:var(--gold);color:var(--ink);box-shadow:4px 4px 0 var(--cream)}
 
 /* detail page hero band */
 .page-hero{background:
